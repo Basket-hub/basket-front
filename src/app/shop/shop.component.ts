@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import { faSpinner } from '@fortawesome/free-solid-svg-icons';
 
@@ -8,6 +8,7 @@ import { faSpinner } from '@fortawesome/free-solid-svg-icons';
   styleUrls: ['./shop.component.css']
 })
 export class ShopComponent implements OnInit {
+  @Input() selectedItems: any[] = [];
   public faSearch = faSearch;
   public faSpinner = faSpinner;
 
@@ -23,6 +24,18 @@ export class ShopComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  public isItemSelected(itemId: number): boolean {
+    return !!this.selectedItems.find(item => item.id === itemId);
+  }
+
+  public onItemSelect(item: any): void {
+    if (!this.isItemSelected(item.id)) {
+      this.selectedItems.push(item);
+    } else {
+      this.selectedItems = this.selectedItems.filter(i => i.id !== item.id);
+    }
   }
 
 }

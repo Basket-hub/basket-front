@@ -1,21 +1,52 @@
 <div class="container">
   <div class="card border-0 shadow my-5">
     <div class="card-body p-5 text-center">
-      <h1>something</h1>
       <input [(ngModel)]="filter" name="filter" type="text" class="form-control" placeholder="Search products" />
     </div>
   </div>
 </div>
 
 <div class="container">
-  <div class="card border-0 shadow p-4 my-5">
+  <div class="card border-0 shadow p-4">
     <div class="row">
-      <div class="col-lg-4 col-md-3 col-2" *ngFor="let item of someRandomItems">
+      <div class="col-md-3">
         <div class="card card-hover shadow m-2">
           <div class="card-body">
-            <h3 class="card-title product-name">{{ item.name }}</h3>
-            <p class="card-text some-text">{{ item.price }}</p>
-            <button class="btn btn-primary">Add to basket</button>
+            <ul class="list-group">
+              <li class="list-group-item">
+                <input class="form-check-input me-1" type="checkbox">
+                Category 1
+              </li>
+              <li class="list-group-item">
+                <input class="form-check-input me-1" type="checkbox">
+                Category 2
+              </li>
+              <li class="list-group-item">
+                <input class="form-check-input me-1" type="checkbox">
+                Category 3
+              </li>
+              <li class="list-group-item">
+                <input class="form-check-input me-1" type="checkbox">
+                Category 4
+              </li>
+              <li class="list-group-item">
+                <input class="form-check-input me-1" type="checkbox">
+                Category 5
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-9">
+        <div class="row">
+          <div class="col-lg-4 col-3" *ngFor="let item of someRandomItems">
+            <div class="card card-hover shadow m-2" [ngClass]="{'selected-border': isItemSelected(item.id)}" (click)="onItemSelect(item)">
+              <div class="card-body">
+                <h3 class="card-title product-name">{{ item.name }}</h3>
+                <p class="card-text some-text">{{ item.price }}</p>
+                <button class="btn btn-primary">Remove</button>
+              </div>
+            </div>
           </div>
         </div>
       </div>
