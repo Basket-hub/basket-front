@@ -1,7 +1,105 @@
 <div class="container">
   <div class="card border-0 shadow my-5">
     <div class="card-body p-5">
-        Cart
+      <div class="row">
+        <div class="col-4">
+          <p>Choose another market</p>
+          <select class="form-select" aria-label="Default select example">
+            <option selected style="font-weight: bold">Maxima</option>
+            <option value="1">Selver</option>
+            <option value="2">Coop</option>
+            <option value="3">Rimi</option>
+          </select>
+        </div>
+        <div class="col-4">
+          <p style="text-align: center; font-weight: bold">Current choice</p>
+          <div class="card {{shopName != 'Mix' ? 'border-dark' : ''}}"  (click)="shopName = 'Maxima'">
+            <div class="card-content">
+              <div class="card-body">
+                <div class="media d-flex">
+                  <div class="align-self-center col-8">
+                    <img
+                      src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Maxima_logo.svg/2560px-Maxima_logo.svg.png"
+                      class="img-fluid">
+                  </div>
+                  <div class="col-4">
+                    <h3 style="text-align: right; padding-top: 10px">49.95 €</h3>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-4">
+          <p style="text-align: center; font-weight: bold">Mix</p>
+          <div class="card {{shopName == 'Mix' ? 'border-dark' : ''}}" (click)="shopName = 'Mix'">
+            <div class="card-content">
+              <div class="card-body">
+                <div class="media d-flex">
+                  <div class="align-self-center col-8">
+                    <h2 class="">Mix of stores</h2>
+                  </div>
+                  <div class="col-4">
+                    <h3 style="text-align: right; padding-top: 10px">49.95 €</h3>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="card border-0 shadow p-4">
+    <table class="table table-hover" *ngIf="shopName === 'Mix'">
+      <thead>
+      <tr>
+        <th scope="col">Store</th>
+        <th scope="col">Product</th>
+        <th scope="col">Price</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let product of mixList">
+        <td>{{product.shop}}</td>
+        <td>{{product.name}}</td>
+        <td>{{product.price}}</td>
+      </tr>
+      </tbody>
+      <tfoot>
+      <tr>
+        <td></td>
+        <td></td>
+        <td><b>{{mixList | productSum}} €</b></td>
+      </tr>
+      </tfoot>
+    </table>
+
+    <table class="table table-hover" *ngIf="shopName && shopName !== 'Mix'">
+      <thead>
+      <tr>
+        <th scope="col">Store</th>
+        <th scope="col">Product</th>
+        <th scope="col">Price</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let product of shops['Maxima']">
+        <td>{{product.shop}}</td>
+        <td>{{product.name}}</td>
+        <td>{{product.price}}</td>
+      </tr>
+      </tbody>
+      <tfoot>
+      <tr>
+        <td></td>
+        <td></td>
+        <td><b>{{shops['Maxima'] | productSum}} €</b></td>
+      </tr>
+      </tfoot>
+    </table>
   </div>
 </div>

@@ -35,6 +35,7 @@ export class ShopComponent implements OnInit {
   ngOnInit(): void {
     const items = this.localStorageService.loadItems();
     this.selectedItems = items ? items : [];
+    this.weirdService.selectedItemsCount.next(this.selectedItems.length);
   }
 
   public clearSelection(): void {
