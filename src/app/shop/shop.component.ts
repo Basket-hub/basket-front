@@ -17,17 +17,17 @@ export class ShopComponent implements OnInit {
   public filter = "";
 
   public itemsBeingDisplayed = [
-    {id: 1, name: "Kirde sai 450g", price: 0.79, shop: "Coop"},
-    {id: 2, name: "Talukurk, SALVEST, 675 g", price: 1.69, shop: "Selver"},
-    {id: 3, name: "Saaremaa vesi 5L", price: 0.99, shop: "Rimi"},
-    {id: 4, name: "Pampers 38tk", price: 11.99, shop: "Selver"},
-    {id: 5, name: "Piim 1l", price: 1.20, shop: "Maxima"},
-    {id: 6, name: "Eesti juust 500g", price: 1.56, shop: "Coop"},
-    {id: 7, name: "Maasikamoos 200g", price: 1.29, shop: "Maxima"},
-    {id: 8, name: "Vihik 24lk", price: 0.4, shop: "Rimi"},
-    {id: 9, name: "Saiake 50g", price: 0.35, shop: "Selver"},
-    {id: 10, name: "Pilaff 250g", price: 2.20, shop: "Coop"},
-    {id: 11, name: "Pitsa", price: 1.9, shop: "Maxima"},
+    { id: 23, name: "Kirde sai 450g", price: 0.70, shop: "Coop" },
+    { id: 24, name: "Talukurk, SALVEST, 675 g", price: 1.00, shop: "Coop" },
+    { id: 3, name: "Saaremaa vesi 5L", price: 0.78, shop: "Maxima" },
+    { id: 37, name: "Pampers 38tk", price: 12.34, shop: "Rimi" },
+    { id: 27, name: "Piim 1l", price: 0.50, shop: "Coop" },
+    { id: 6, name: "Eesti juust 500g", price: 1.56, shop: "Maxima" },
+    { id: 29, name: "Maasikamoos 200g", price: 4.25, shop: "Coop" },
+    { id: 19, name: "Vihik 24lk", price: 0.10, shop: "Selver" },
+    { id: 20, name: "Saiake 50g", price: 0.24, shop: "Selver" },
+    { id: 32, name: "Pilaff 250g", price: 2.22, shop: "Coop" },
+    { id: 22, name: "Pitsa", price: 4.24, shop: "Selver" }
   ]
 
   constructor(private weirdService: WeirdService, private localStorageService: LocalstorageService) {}

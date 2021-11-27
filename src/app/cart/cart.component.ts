@@ -25,7 +25,7 @@ export class CartComponent implements OnInit {
       { id: 8, name: "Vihik 24lk", price: 0.10, shop: "Maxima" },
       { id: 9, name: "Saiake 50g", price: 0.40, shop: "Maxima" },
       { id: 10, name: "Pilaff 250g", price: 2.75, shop: "Maxima" },
-      { id: 11, name: "Pitsa 2tk", price: 4.57, shop: "Maxima" }
+      { id: 11, name: "Pitsa", price: 4.57, shop: "Maxima" }
     ],
     "Selver": [
       { id: 12, name: "Kirde sai 450g", price: 0.90, shop: "Selver" },
@@ -38,7 +38,7 @@ export class CartComponent implements OnInit {
       { id: 19, name: "Vihik 24lk", price: 0.10, shop: "Selver" },
       { id: 20, name: "Saiake 50g", price: 0.24, shop: "Selver" },
       { id: 21, name: "Pilaff 250g", price: 2.34, shop: "Selver" },
-      { id: 22, name: "Pitsa 2tk", price: 4.24, shop: "Selver" }
+      { id: 22, name: "Pitsa", price: 4.24, shop: "Selver" }
     ],
     "Coop": [
       { id: 23, name: "Kirde sai 450g", price: 0.70, shop: "Coop" },
@@ -51,7 +51,7 @@ export class CartComponent implements OnInit {
       { id: 30, name: "Vihik 24lk", price: 0.25, shop: "Coop" },
       { id: 31, name: "Saiake 50g", price: 0.1, shop: "Coop" },
       { id: 32, name: "Pilaff 250g", price: 2.22, shop: "Coop" },
-      { id: 33, name: "Pitsa 2tk", price: 4.76, shop: "Coop" }
+      { id: 33, name: "Pitsa", price: 4.76, shop: "Coop" }
     ],
     "Rimi": [
       { id: 34, name: "Kirde sai 450g", price: 0.87, shop: "Rimi" },
@@ -64,14 +64,14 @@ export class CartComponent implements OnInit {
       { id: 41, name: "Vihik 24lk", price: 0.56, shop: "Rimi" },
       { id: 42, name: "Saiake 50g", price: 0.43, shop: "Rimi" },
       { id: 43, name: "Pilaff 250g", price: 2.23, shop: "Rimi" },
-      { id: 44, name: "Pitsa 2tk", price: 4.40, shop: "Rimi" }
+      { id: 44, name: "Pitsa", price: 4.40, shop: "Rimi" }
     ]
   };
 
   constructor() { }
 
   ngOnInit(): void {
-    this.mixList = (JSON.parse(localStorage.getItem("selectedItems") as string));
+    this.mixList = (JSON.parse(localStorage.getItem("items") as string));
     this.mixList = [...this.mixList];
     this.mixList.forEach(product => {
       this.shops['Maxima'].forEach(maxima => {
