@@ -13,7 +13,7 @@
         </div>
         <div class="col-4">
           <p style="text-align: center; font-weight: bold">Current choice</p>
-          <div class="card {{shopName != 'Mix' ? 'border-dark' : ''}}"  (click)="shopName = 'Maxima'">
+          <div class="card {{shopName != 'Mix' ? 'border-dark' : ''}}"  (click)="shopName = 'Maxima'" style="cursor:pointer;">
             <div class="card-content">
               <div class="card-body">
                 <div class="media d-flex">
@@ -32,7 +32,7 @@
         </div>
         <div class="col-4">
           <p style="text-align: center; font-weight: bold">Mix</p>
-          <div class="card {{shopName == 'Mix' ? 'border-dark' : ''}}" (click)="shopName = 'Mix'">
+          <div class="card {{shopName == 'Mix' ? 'border-dark' : ''}}" (click)="shopName = 'Mix'" style="cursor:pointer;">
             <div class="card-content">
               <div class="card-body">
                 <div class="media d-flex">
