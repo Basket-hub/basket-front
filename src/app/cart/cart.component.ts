@@ -70,7 +70,7 @@ export class CartComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    this.mixList = (JSON.parse(localStorage.getItem("selectedItems") as string));
+    this.mixList = (JSON.parse(localStorage.getItem("items") as string));
     this.mixList = [...this.mixList];
     this.mixList.forEach(product => {
       this.shops['Maxima'].forEach(maxima => {

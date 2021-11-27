@@ -35,6 +35,7 @@ export class ShopComponent implements OnInit {
   ngOnInit(): void {
     const items = this.localStorageService.loadItems();
     this.selectedItems = items ? items : [];
+    console.log(items?.length)
     setTimeout(() => this.weirdService.selectedItemsCount.next(this.selectedItems.length), 50)
   }
 
@@ -54,7 +55,7 @@ export class ShopComponent implements OnInit {
     } else {
       this.selectedItems = this.selectedItems.filter(i => i.id !== item.id);
     }
-    localStorage.setItem('selectedItems', JSON.stringify(this.selectedItems));
+    localStorage.setItem('items', JSON.stringify(this.selectedItems));
     this.weirdService.selectedItemsCount.next(this.selectedItems.length);
   }
 }
