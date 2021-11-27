@@ -18,16 +18,16 @@ export class ShopComponent implements OnInit {
 
   public itemsBeingDisplayed = [
     {id: 1, name: "Kirde sai 450g", price: 0.79, shop: "Coop"},
-    {id: 6, name: "Talukurk, SALVEST, 675 g", price: 1.69, shop: "Selver"},
-    {id: 11, name: "Saaremaa vesi 5L", price: 0.99, shop: "Rimi"},
-    {id: 8, name: "Pampers 38tk", price: 11.99, shop: "Selver"},
-    {id: 69, name: "Piim 1l", price: 1.20, shop: "Maxima"},
-    {id: 420, name: "Eesti juust 500g", price: 111, shop: "Coop"},
-    {id: 666, name: "Maasikamoos 200g", price: 111, shop: "Maxima"},
-    {id: 12, name: "Vihik 24lk", price: 111, shop: "Rimi"},
-    {id: 24, name: "Saiake 50g", price: 111, shop: "Selver"},
-    {id: 5, name: "Pilaff 250g", price: 111, shop: "Coop"},
-    {id: 2, name: "Pitsa", price: 111, shop: "Maxima"},
+    {id: 2, name: "Talukurk, SALVEST, 675 g", price: 1.69, shop: "Selver"},
+    {id: 3, name: "Saaremaa vesi 5L", price: 0.99, shop: "Rimi"},
+    {id: 4, name: "Pampers 38tk", price: 11.99, shop: "Selver"},
+    {id: 5, name: "Piim 1l", price: 1.20, shop: "Maxima"},
+    {id: 6, name: "Eesti juust 500g", price: 111, shop: "Coop"},
+    {id: 7, name: "Maasikamoos 200g", price: 111, shop: "Maxima"},
+    {id: 8, name: "Vihik 24lk", price: 111, shop: "Rimi"},
+    {id: 9, name: "Saiake 50g", price: 111, shop: "Selver"},
+    {id: 10, name: "Pilaff 250g", price: 111, shop: "Coop"},
+    {id: 11, name: "Pitsa", price: 111, shop: "Maxima"},
   ]
 
   constructor(private weirdService: WeirdService, private localStorageService: LocalstorageService) {}
