@@ -23,7 +23,7 @@
                       class="img-fluid">
                   </div>
                   <div class="col-4">
-                    <h3 style="text-align: right; padding-top: 10px">49.95 €</h3>
+                    <h3 style="text-align: right; padding-top: 10px">{{oneList | productSum | number : '1.2-2'}} €</h3>
                   </div>
                 </div>
               </div>
@@ -40,7 +40,7 @@
                     <h2 class="">Mix of stores</h2>
                   </div>
                   <div class="col-4">
-                    <h3 style="text-align: right; padding-top: 10px">49.95 €</h3>
+                    <h3 style="text-align: right; padding-top: 10px">{{mixList | productSum | number : '1.2-2'}} €</h3>
                   </div>
                 </div>
               </div>
@@ -97,7 +97,7 @@
       <tr>
         <td></td>
         <td></td>
-        <td><b>{{oneList | productSum}} €</b></td>
+        <td><b>{{oneList | productSum | number : '1.2-2'}} €</b></td>
       </tr>
       </tfoot>
     </table>
