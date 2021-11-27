@@ -54,7 +54,7 @@ export class ShopComponent implements OnInit {
     } else {
       this.selectedItems = this.selectedItems.filter(i => i.id !== item.id);
     }
-    localStorage.setItem('selectedItems', JSON.stringify(this.selectedItems));
+    localStorage.setItem('items', JSON.stringify(this.selectedItems));
     this.weirdService.selectedItemsCount.next(this.selectedItems.length);
   }
 }
