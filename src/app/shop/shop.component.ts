@@ -1,3 +1,4 @@
+import { WeirdService } from './../service/weird.service';
 import { Component, Input, OnInit } from '@angular/core';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import { faSpinner } from '@fortawesome/free-solid-svg-icons';
@@ -25,21 +26,19 @@ export class ShopComponent implements OnInit {
     {id: 12, name: "Vihik 24lk", price: 111, shop: "Rimi"},
     {id: 24, name: "Saiake 50g", price: 111, shop: "Selver"},
     {id: 5, name: "Pilaff 250g", price: 111, shop: "Coop"},
-    {id: 2, name: "Pitsa 2tk", price: 111, shop: "Maxima"},
+    {id: 2, name: "Pitsa", price: 111, shop: "Maxima"},
   ]
 
-  constructor() {
-    // mocking selected items until home page ready
-    localStorage.setItem('selectedItems', JSON.stringify(
-      [
-        {id: 1, name: "Kirde sai 450g", price: 0.79, shop: "Coop"},
-        {id: 8, name: "Pampers 38tk", price: 11.99, shop: "Selver"}
-      ]
-    ));
-  }
+  constructor(private weirdService: WeirdService) {}
 
   ngOnInit(): void {
-    this.selectedItems = JSON.parse(localStorage.getItem("selectedItems")!);
+    this.selectedItems = JSON.parse(localStorage.getItem("selectedItems") ?? '[]');
+  }
+
+  public clearSelection(): void {
+    localStorage.removeItem('selectedItems');
+    this.selectedItems = [];
+    this.weirdService.selectedItemsCount.next(this.selectedItems.length);
   }
 
   public isItemSelected(itemId: number): boolean {
@@ -53,5 +52,6 @@ export class ShopComponent implements OnInit {
       this.selectedItems = this.selectedItems.filter(i => i.id !== item.id);
     }
     localStorage.setItem('selectedItems', JSON.stringify(this.selectedItems));
+    this.weirdService.selectedItemsCount.next(this.selectedItems.length);
   }
 }

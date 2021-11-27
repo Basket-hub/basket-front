@@ -9,8 +9,11 @@
         <li class="nav-item active">
           <a class="nav-link" [routerLink]="['/']"><fa-icon [icon]="faHome"></fa-icon> Home</a>
         </li>
+        <li class="nav-item active">
+          <a class="nav-link" [routerLink]="['/shop']"><fa-icon [icon]="faTag"></fa-icon> Shop</a>
+        </li>
         <li class="nav-item">
-          <a class="nav-link" [routerLink]="['/cart']"><fa-icon [icon]="faShoppingCart"></fa-icon> Cart</a>
+          <a class="nav-link" [routerLink]="['/cart']"><fa-icon [icon]="faShoppingCart"></fa-icon> Cart ({{ selectedItemsCount }})</a>
         </li>
       </ul>
     </div>
