@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
+import { faHome } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +8,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'TWHack';
+  public faShoppingCart = faShoppingCart;
+  public faHome = faHome;
 }
