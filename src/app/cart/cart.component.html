@@ -87,7 +87,7 @@
       </tr>
       </thead>
       <tbody>
-      <tr *ngFor="let product of shops['Maxima']">
+      <tr *ngFor="let product of oneList">
         <td>{{product.shop}}</td>
         <td>{{product.name}}</td>
         <td>{{product.price}}</td>
@@ -97,7 +97,7 @@
       <tr>
         <td></td>
         <td></td>
-        <td><b>{{shops['Maxima'] | productSum}} €</b></td>
+        <td><b>{{oneList | productSum}} €</b></td>
       </tr>
       </tfoot>
     </table>
