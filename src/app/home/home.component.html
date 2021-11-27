@@ -8,13 +8,13 @@
 </div>
 
 <div class="container">
-  <div class="card border-0 shadow my-5">
+  <div class="card border-0 shadow p-4 my-5">
     <div class="row">
-      <div class="col">
-        <div class="card m-5">
+      <div class="col-lg-4 col-md-3 col-2" *ngFor="let item of someRandomItems">
+        <div class="card card-hover shadow m-2">
           <div class="card-body">
-            <h5 class="card-title">Some product</h5>
-            <p class="card-text">Price</p>
+            <h3 class="card-title product-name">{{ item.name }}</h3>
+            <p class="card-text some-text">{{ item.price }}</p>
             <button class="btn btn-primary">Add to basket</button>
           </div>
         </div>
