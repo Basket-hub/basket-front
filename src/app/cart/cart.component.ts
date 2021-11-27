@@ -7,9 +7,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CartComponent implements OnInit {
 
+  public mixList: any[] = [];
+
   constructor() { }
 
   ngOnInit(): void {
+    this.mixList = (JSON.parse(localStorage.getItem("selectedItems") as string));
+    this.mixList = [...this.mixList];
   }
 
 }
