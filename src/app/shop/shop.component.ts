@@ -2,6 +2,7 @@ import { WeirdService } from './../service/weird.service';
 import { Component, Input, OnInit } from '@angular/core';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import { faSpinner } from '@fortawesome/free-solid-svg-icons';
+import {LocalstorageService} from '../service/localstorage.service';
 
 @Component({
   selector: 'app-shop',
@@ -29,10 +30,11 @@ export class ShopComponent implements OnInit {
     {id: 2, name: "Pitsa", price: 111, shop: "Maxima"},
   ]
 
-  constructor(private weirdService: WeirdService) {}
+  constructor(private weirdService: WeirdService, private localStorageService: LocalstorageService) {}
 
   ngOnInit(): void {
-    this.selectedItems = JSON.parse(localStorage.getItem("selectedItems") ?? '[]');
+    const items = this.localStorageService.loadItems();
+    this.selectedItems = items ? items : [];
   }
 
   public clearSelection(): void {
