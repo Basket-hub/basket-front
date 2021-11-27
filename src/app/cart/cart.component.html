@@ -13,7 +13,7 @@
         </div>
         <div class="col-4">
           <p style="text-align: center; font-weight: bold">Current choice</p>
-          <div class="card">
+          <div class="card {{shopName != 'Mix' ? 'border-dark' : ''}}"  (click)="shopName = 'Maxima'">
             <div class="card-content">
               <div class="card-body">
                 <div class="media d-flex">
@@ -32,7 +32,7 @@
         </div>
         <div class="col-4">
           <p style="text-align: center; font-weight: bold">Mix</p>
-          <div class="card border-dark">
+          <div class="card {{shopName == 'Mix' ? 'border-dark' : ''}}" (click)="shopName = 'Mix'">
             <div class="card-content">
               <div class="card-body">
                 <div class="media d-flex">
@@ -54,7 +54,7 @@
 
 <div class="container">
   <div class="card border-0 shadow p-4">
-    <table class="table table-hover" *ngIf="mixList">
+    <table class="table table-hover" *ngIf="shopName === 'Mix'">
       <thead>
       <tr>
         <th scope="col">Store</th>
@@ -73,7 +73,31 @@
       <tr>
         <td></td>
         <td></td>
-        <td>180 €</td>
+        <td><b>{{mixList | productSum}} €</b></td>
+      </tr>
+      </tfoot>
+    </table>
+
+    <table class="table table-hover" *ngIf="shopName && shopName !== 'Mix'">
+      <thead>
+      <tr>
+        <th scope="col">Store</th>
+        <th scope="col">Product</th>
+        <th scope="col">Price</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let product of shops['Maxima']">
+        <td>{{product.shop}}</td>
+        <td>{{product.name}}</td>
+        <td>{{product.price}}</td>
+      </tr>
+      </tbody>
+      <tfoot>
+      <tr>
+        <td></td>
+        <td></td>
+        <td><b>{{shops['Maxima'] | productSum}} €</b></td>
       </tr>
       </tfoot>
     </table>

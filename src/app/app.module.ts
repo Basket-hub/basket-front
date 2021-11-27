@@ -8,6 +8,7 @@ import { HomeComponent } from './home/home.component';
 import { FormsModule } from '@angular/forms';
 import { ShopComponent } from './shop/shop.component';
 import { ProductFilterPipe } from './util/product-filter.pipe';
+import {ProductSumPipe} from "./util/product-sum.pipe";
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { ProductFilterPipe } from './util/product-filter.pipe';
     CartComponent,
     HomeComponent,
     ShopComponent,
-    ProductFilterPipe
+    ProductFilterPipe,
+    ProductSumPipe
   ],
   imports: [
     BrowserModule,
