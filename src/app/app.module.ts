@@ -7,13 +7,15 @@ import { CartComponent } from './cart/cart.component';
 import { HomeComponent } from './home/home.component';
 import { FormsModule } from '@angular/forms';
 import { ShopComponent } from './shop/shop.component';
+import { ProductFilterPipe } from './util/product-filter.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     CartComponent,
     HomeComponent,
-    ShopComponent
+    ShopComponent,
+    ProductFilterPipe
   ],
   imports: [
     BrowserModule,

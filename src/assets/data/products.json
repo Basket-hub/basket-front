@@ -2,37 +2,37 @@
   {
     "shop": "Coop",
     "products": [
-      {"name": "Kirde sai 450g", "price": 0.79},
-      {"name": "Talukurk, SALVEST, 675 g", "price": 1.59},
-      {"name": "Saaremaa vesi 5L", "price": 1.19},
-      {"name": "Pampers 38tk", "price": 13.99}
+      {"id": 1, "name": "Kirde sai 450g", "price": 0.79, "shop": "Coop"},
+      {"id": 2, "name": "Talukurk, SALVEST, 675 g", "price": 1.59, "shop": "Coop"},
+      {"id": 3, "name": "Saaremaa vesi 5L", "price": 1.19, "shop": "Coop"},
+      {"id": 4, "name": "Pampers 38tk", "price": 13.99, "shop": "Coop"}
     ]
   },
   {
     "shop": "Selver",
     "products": [
-      {"name": "Kirde sai 450g", "price": 0.79},
-      {"name": "Talukurk, SALVEST, 675 g", "price": 1.69},
-      {"name": "Saaremaa vesi 5L", "price": 0.99},
-      {"name": "Pampers 38tk", "price": 11.99}
+      {"id": 5, "name": "Kirde sai 450g", "price": 0.79, "shop": "Selver"},
+      {"id": 6, "name": "Talukurk, SALVEST, 675 g", "price": 1.69, "shop": "Selver"},
+      {"id": 7, "name": "Saaremaa vesi 5L", "price": 0.99, "shop": "Selver"},
+      {"id": 8, "name": "Pampers 38tk", "price": 11.99, "shop": "Selver"}
     ]
   },
   {
     "shop": "Rimi",
     "products": [
-      {"name": "Kirde sai 450g", "price": 0.79},
-      {"name": "Talukurk, SALVEST, 675 g", "price": 2.25},
-      {"name": "Saaremaa vesi 5L", "price": 0.99},
-      {"name": "Pampers 38tk", "price": 11.99}
+      {"id": 9, "name": "Kirde sai 450g", "price": 0.79, "shop": "Rimi"},
+      {"id": 10, "name": "Talukurk, SALVEST, 675 g", "price": 2.25, "shop": "Rimi"},
+      {"id": 11, "name": "Saaremaa vesi 5L", "price": 0.99, "shop": "Rimi"},
+      {"id": 12, "name": "Pampers 38tk", "price": 11.99, "shop": "Rimi"}
     ]
   },
   {
     "shop": "Maxima",
     "products": [
-      {"name": "Kirde sai 450g", "price": 0.79},
-      {"name": "Talukurk, SALVEST, 675 g", "price": 2.19},
-      {"name": "Saaremaa vesi 5L", "price": 0.99},
-      {"name": "Pampers 38tk", "price": 11.49}
+      {"id": 13, "name": "Kirde sai 450g", "price": 0.79, "shop": "Maxima"},
+      {"id": 14, "name": "Talukurk, SALVEST, 675 g", "price": 2.19, "shop": "Maxima"},
+      {"id": 15, "name": "Saaremaa vesi 5L", "price": 0.99, "shop": "Maxima"},
+      {"id": 16, "name": "Pampers 38tk", "price": 11.49, "shop": "Maxima"}
     ]
   }
 ]

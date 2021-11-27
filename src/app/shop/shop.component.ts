@@ -8,22 +8,38 @@ import { faSpinner } from '@fortawesome/free-solid-svg-icons';
   styleUrls: ['./shop.component.css']
 })
 export class ShopComponent implements OnInit {
-  @Input() selectedItems: any[] = [];
+  public selectedItems: any[] = [];
   public faSearch = faSearch;
   public faSpinner = faSpinner;
 
   public filter = "";
 
-  public someRandomItems = [ // TODO: replace with mock data from service
-    { id: 1, name: "cheese", price: 4.49 },
-    { id: 2, name: "yogurt", price: 1.24 },
-    { id: 3, name: "bread", price: 0.65 },
-    { id: 4, name: "milk", price: 1.12 },
+  public itemsBeingDisplayed = [
+    {id: 1, name: "Kirde sai 450g", price: 0.79, shop: "Coop"},
+    {id: 6, name: "Talukurk, SALVEST, 675 g", price: 1.69, shop: "Selver"},
+    {id: 11, name: "Saaremaa vesi 5L", price: 0.99, shop: "Rimi"},
+    {id: 8, name: "Pampers 38tk", price: 11.99, shop: "Selver"},
+    {id: 69, name: "Piim 1l", price: 1.20, shop: "Maxima"},
+    {id: 420, name: "Eesti juust 500g", price: 111, shop: "Coop"},
+    {id: 666, name: "Maasikamoos 200g", price: 111, shop: "Maxima"},
+    {id: 12, name: "Vihik 24lk", price: 111, shop: "Rimi"},
+    {id: 24, name: "Saiake 50g", price: 111, shop: "Selver"},
+    {id: 5, name: "Pilaff 250g", price: 111, shop: "Coop"},
+    {id: 2, name: "Pitsa 2tk", price: 111, shop: "Maxima"},
   ]
 
-  constructor() { }
+  constructor() {
+    // mocking selected items until home page ready
+    localStorage.setItem('selectedItems', JSON.stringify(
+      [
+        {id: 1, name: "Kirde sai 450g", price: 0.79, shop: "Coop"},
+        {id: 8, name: "Pampers 38tk", price: 11.99, shop: "Selver"}
+      ]
+    ));
+  }
 
   ngOnInit(): void {
+    this.selectedItems = JSON.parse(localStorage.getItem("selectedItems")!);
   }
 
   public isItemSelected(itemId: number): boolean {
@@ -36,6 +52,6 @@ export class ShopComponent implements OnInit {
     } else {
       this.selectedItems = this.selectedItems.filter(i => i.id !== item.id);
     }
+    localStorage.setItem('selectedItems', JSON.stringify(this.selectedItems));
   }
-
 }

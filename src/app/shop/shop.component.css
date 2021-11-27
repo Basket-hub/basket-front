@@ -20,7 +20,6 @@ h2 {
 }
 
 .product-name {
-    overflow: hidden;
     height: 56px;
     font-weight: 500;
 }
