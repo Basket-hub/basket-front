@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {max} from "rxjs/operators";
 
 @Component({
   selector: 'app-cart',
@@ -8,7 +9,9 @@ import { Component, OnInit } from '@angular/core';
 export class CartComponent implements OnInit {
 
   public mixList: any[] = [];
+  public oneList: any[] = [];
   public shopName = "Maxima";
+  public shopNames = ['Maxima', 'Rimi', 'Selver', 'Coop'];
 
   public shops = {
     "Maxima": [
@@ -22,7 +25,7 @@ export class CartComponent implements OnInit {
     { id: 12, name: "Vihik 24lk", price: 0.10, shop: "Maxima" },
     { id: 24, name: "Saiake 50g", price: 0.40, shop: "Maxima" },
     { id: 5, name: "Pilaff 250g", price: 2.75, shop: "Maxima" },
-    { id: 2, name: "Pitsa", price: 4.57, shop: "Maxima" }
+    { id: 2, name: "Pitsa 2tk", price: 4.57, shop: "Maxima" }
     ]
   };
 
@@ -31,6 +34,13 @@ export class CartComponent implements OnInit {
   ngOnInit(): void {
     this.mixList = (JSON.parse(localStorage.getItem("selectedItems") as string));
     this.mixList = [...this.mixList];
+    this.mixList.forEach(product => {
+      this.shops['Maxima'].forEach(maxima => {
+        if (maxima['name'] === product['name']) {
+          this.oneList.push(maxima);
+        }
+      })
+    });
   }
 
 }
