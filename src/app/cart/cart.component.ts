@@ -10,7 +10,7 @@ export class CartComponent implements OnInit {
 
   public mixList: any[] = [];
   public oneList: any[] = [];
-  public shopName = "Maxima";
+  public shopName = "Mix";
   public shopNames = ['Maxima', 'Rimi', 'Selver', 'Coop'];
 
   public shops = {
