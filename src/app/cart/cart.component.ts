@@ -81,4 +81,16 @@ export class CartComponent implements OnInit {
     });
   }
 
+  getBestPrice(store: any[]): number {
+    let sum = 0;
+    this.mixList.forEach(product => {
+      store.forEach(e => {
+        if (e.name === product.name) {
+          sum += e.price;
+        }
+      })
+    })
+    return sum;
+  }
+
 }
